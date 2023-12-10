@@ -122,8 +122,9 @@ class Fraction:
     def __pow__(self, other):
         """Overloading of the ** operator for fractions
 
-        PRE : other est un entier ou float par lequel exponecer l'objet
-        POST : self**other, qui est un float
+        PRE : other est un objet Fraction
+        POST : self**other, une Fraction
+        RAISE : expneg si le nombre exponencé est négatif, irrationel si le résultat serait irrationel
         """
         
         # (a/b)^(c/d) = (a/b)^c * (a/b)^(1/d) = (a^c * a^(1/d) / b^c * b^(1/d))
@@ -219,4 +220,6 @@ if __name__ == '__main__':
     print(test.is_integer())
     test3 = test**test2
     print(test3)
+    
+    # division par 0:
     test4 = Fraction(1,0)
